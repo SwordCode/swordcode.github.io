@@ -10,8 +10,7 @@ title:            Swordcode
 tagline:          'Blog'
 description:      'Bienvenidos al blog de <a href="http://swordcode.com" target="_blank">Swordcode</a>'
 
-#url:              http://blog.swordcode.com
-url:              http://127.0.0.1:4000
+url:              http://swordcode.github.io
 baseurl:          '/'
 paginate:         5
 
@@ -23,4 +22,4 @@ author:
 version:          1.0.0
 
 github:
-  repo:           https://github.com/poole/lanyon
+  repo:           https://github.com/swordcode/swordcode.github.io
