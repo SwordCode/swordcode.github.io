@@ -1,7 +1,7 @@
 --- 
 layout: default
 title: Autenticación con credenciales de proveedores (Twitter, Facebook, Github, etc) en aplicaciones Rails usando Devise y Omniauth
-
+comments: true
 ---
 
 Integrar nuestra aplicación Rails para permitir que los usuarios utilicen sus credenciales de Twitter, Facebook, etc,  es relativamente rápido usando Devise y tomando ventaja de su integración con Omniauth.
