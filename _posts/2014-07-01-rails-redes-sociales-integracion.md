@@ -45,7 +45,7 @@ rails g devise:install
 {% endhighlight %}
 
 
-Instalamos el modelo User de Devise,  que es el modelo que contendra los registros de los usuarios que se han registrados a nuestro app y su proveedor.
+Instalamos el modelo User de Devise,  que es el modelo que contendra los registros de los usuarios que se han registrados en nuestro app usando algún proveedor.
 
 {% highlight ruby %}
 rails d devise user
@@ -57,12 +57,11 @@ Agregamos el modelo identity
 
 {% highlight ruby %}
 rails g migration add_name_to_users name:string
-
 rails g model identity user:references provider:string uid:string
 {% endhighlight %}
 
 
-Buscamos en app/models/identity.rb y nuestro debe verse así:
+Editamos el archivo app/models/identity.rb,  debe verse así:
 
 {% highlight ruby %}
 class Identity < ActiveRecord::Base
@@ -79,7 +78,7 @@ end
 
 {% endhighlight %}
 
-Es aqui donde vamos a utilizar las llaves secretas que generamos registando nuestra app en Twitter.  Abrimos el archivo app/config/initializers/devise.rb y agregamos las siguientes lineas al final del archivo:
+Es aqui donde vamos a utilizar las llaves secretas que generamos registando nuestra app en Twitter.  Abrimos el archivo app/config/initializers/devise.rb y agregamos las siguientes líneas al final del archivo:
 
 {% highlight ruby %}
 Devise.setup do |config|
@@ -148,9 +147,11 @@ class User < ActiveRecord::Base
 end
 {% endhighlight %}
 
-No como otros proveedor,  Twitter no proporciona el correo de sus usuarios,  por lo tanto en el model User  a la hora de crear un nuevo usuario creamos el correo a partir del uid (id del usuario).
+No como otros proveedores,  Twitter no proporciona el correo de sus usuarios,  por lo tanto en el model User  a la hora de crear un nuevo usuario creamos el correo a partir del uid (id del usuario).
 
 Y listo,  ya hemos implementado la autenticación utilizando Omniauth para Twitter, puedes probar su funcionamiento en <a href="http://localhost:3000/users/auth/twitter/">http://127.0.0.1:3000/users/auth/twitter/</a>
 
-Visita el repositorio de está implementación en <a href="https://github.com/SwordCode/stock-dashboard">Stock Dashboard</a>. Un demo funcional puede ser visto en esta dirección <a href="http://gentle-tor-3942.herokuapp.com/">http://gentle-tor-3942.herokuapp.com/</a>
+Visita el repositorio de está implementación en <a href="https://github.com/SwordCode/stock-dashboard">Stock Dashboard</a>. 
+
+Un demo funcional puede ser visto en esta dirección <a href="http://gentle-tor-3942.herokuapp.com/">http://gentle-tor-3942.herokuapp.com/</a>
 
