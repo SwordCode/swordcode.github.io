@@ -78,5 +78,5 @@ Consultamos nuestra tabla _dowjonesindustrial_ y nos aseguramos que nuestros dat
 
 El script completo:
 
-{% gist 0bad7aeeb1dea446eadc %}
+{% gist ed336b85aa35aeb827fc %}
 
